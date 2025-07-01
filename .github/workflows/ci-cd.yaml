@@ -25,15 +25,18 @@ jobs:
         with:
           context: ./wisecow
           push: true
-          tags: ${{ secrets.DOCKER_REGISTRY }}/wisecow:latest
+          tags: ${{ secrets.DOCKER_REGISTRY }}/wisecow-app:latest
 
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3
         with:
           version: 'latest'
 
+      - name: Write kubeconfig to file
+        run: echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
+
       - name: Deploy to Kubernetes
         env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          KUBECONFIG: ${{ github.workspace }}/kubeconfig.yaml
         run: |
-          kubectl set image deployment/wisecow wisecow=${{ secrets.DOCKER_REGISTRY }}/wisecow:latest -n default 
+          kubectl set image deployment/wisecow wisecow=ishaanj18/wisecow-app:latest -n default 
