@@ -90,4 +90,4 @@ Or open [https://wisecow.local](https://wisecow.local) in your browser (accept t
 - `.github/workflows/ci-cd.yaml` – CI/CD pipeline
 
 ## Contact
-For any questions, please contact the repository owner.
+For any questions, please contact 
