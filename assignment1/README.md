@@ -47,7 +47,7 @@ wisecow-app-accuknox-assignment-/
 ## Environment-Specific Notes
 - **k3s:**
   - Traefik Ingress controller is installed by default.
-  - Use the public IP of your VM for external access.
+  - Use the public IP of your VM for external access
   - For TLS, use the self-signed issuer for local/dev, or Let's Encrypt for production (update cert-issuer.yaml and certificate.yaml accordingly).
 - **minikube:**
   - Enable Ingress: `minikube addons enable ingress`
