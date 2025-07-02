@@ -1,0 +1,2 @@
+2025-07-02 14:02:20,108 INFO: https://www.google.com is UP (HTTP 200)
+2025-07-02 14:02:36,504 ERROR: https://wisecow.local is DOWN (Exception: HTTPSConnectionPool(host='wisecow.local', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)'))))
