@@ -44,4 +44,4 @@ jobs:
         env:
           KUBECONFIG: ${{ github.workspace }}/kubeconfig.yaml
         run: |
-          kubectl set image deployment/wisecow wisecow=${{ secrets.DOCKER_REGISTRY }}/wisecow-app:${{ github.sha }} -n default -f assignment1/k8s/deployment.yaml 
+          kubectl set image deployment/wisecow wisecow=${{ secrets.DOCKER_REGISTRY }}/wisecow-app:${{ github.sha }} -n default 
