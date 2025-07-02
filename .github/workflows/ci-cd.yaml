@@ -26,7 +26,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./wisecow
+          context: ./assignment1/wisecow
           push: true
           tags: |
             ${{ secrets.DOCKER_REGISTRY }}/wisecow-app:latest
@@ -44,4 +44,4 @@ jobs:
         env:
           KUBECONFIG: ${{ github.workspace }}/kubeconfig.yaml
         run: |
-          kubectl set image deployment/wisecow wisecow=${{ secrets.DOCKER_REGISTRY }}/wisecow-app:${{ github.sha }} -n default 
+          kubectl set image deployment/wisecow wisecow=${{ secrets.DOCKER_REGISTRY }}/wisecow-app:${{ github.sha }} -n default -f assignment1/k8s/deployment.yaml 
