@@ -3,6 +3,9 @@ name: CI/CD
 on:
   push:
     branches: [main]
+    paths:
+      - 'assignment1/**'
+      - '.github/workflows/ci-cd.yaml'
 
 jobs:
   build-and-deploy:
